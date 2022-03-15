@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="/iconos/bootstrap-icons.css"  media="screen" />
+    <link rel="stylesheet" type="text/css" href="/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/estilo.css"  media="screen" />
+    <script type="text/javascript" src="/sweetalert.js"></script>
+
+    <title>LIBRO DE OBRA</title>
+</head>
+<body>
+
+<div id="titulo2"><strong>LIBRO DE OBRA DIGITAL BLOCKCHAIN</strong></div>
+  <div id="registro0" >
+      <br></br>
+    <form method="post" action="/impresion1">
+        <label for="usuario">USUARIO</label>
+        <input type="password" name="usuario" id="usuario"> 
+        <br></br> 
+        <label for="contraseña">CONTRASEÑA</label>
+        <input type="password" name="contraseña" id="contraseña">  
+        <br></br> 
+        <br></br>
+        <input type="submit" value="Validar" class="btn btn-primary" id="b1"/>   
+    </form>     
+  </div>
+<div>  
+<button id="carga0" class="btn btn-success" onclick="Up()" >Cargar Archivo <i class="bi bi-journal-arrow-up"  style="font-size: calc(1.8vw);"></i></button>
+<button id="visible"  class="btn btn-success"  onclick="envio()">Enviar <i class="bi bi-send-fill" style="font-size: calc(1.8vw);"></i></button >
+</div>
+<form action="/libro1" method="post" enctype="multipart/form-data" >
+  <input type="file"  id="oculto" onchange="Seleccion(this.value)" name="oculto">
+  <input type="submit" id="oculto2" value="normal">
+  </form>
+
+<button id="despliegue" class="btn btn-info" onclick="Mostrar()"> REGISTRARSE </button>
+<div id="registro1" >
+  <div id="separado">
+<form method="post" action="/verificador1">
+    <br><br>
+    <label for="usuario">USUARIO</label>
+    <input type="password" name="usuario2" id="usuario2"> 
+    <br></br>
+    <label for="contraseña">CONTRASEÑA</label>
+    <input type="password" name="contraseña2" id="contraseña2">  
+    <br></br> 
+    <label for="confirmacion">CONFIRMACION</label>
+    <input type="password" name="confirmacion" id="confirmacion">
+    <br></br>
+    <input type="submit" value="Registrar" class="btn btn-primary" id="b2"/>   
+</form> 
+</div>
+<script>
+  var band=0;  
+  function Mostrar(){
+  if(band==0){ 
+  document.getElementById('registro1').style.display='block'
+  band=1;  
+  }else{
+  document.getElementById('registro1').style.display='none'  
+  band=0
+  }  
+  }
+  function Up(){
+  document.getElementById('oculto').click()  
+  }
+  function Seleccion(val) {
+  var seleccionado = document.getElementById('oculto').files[0].name 
+  swal(seleccionado, "Archivo Seleccionado");
+  }
+  function envio(){
+  if(document.getElementById('oculto').files[0]==undefined){
+  swal ( "ERROR" ,  "¡ No Se Ha Seleccionado Ningun Archivo !" ,  "error" )  
+  }else{
+  document.getElementById('oculto2').click()  
+  }  
+  } 
+    
+</script>
+</body>
+</html>

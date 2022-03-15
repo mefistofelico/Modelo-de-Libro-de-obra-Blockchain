@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/estilo.css"  media="screen" />
+    <title>LIBRO DE OBRA</title>
+</head>
+<body>
+<div id="titulo"><strong>LIBRO DE OBRA DIGITAL BLOCKCHAIN</strong></div>
+<div id="residente0">
+<div id="textresident">RESIDENTE</div>
+<br></br>
+    <a href="/residente" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" id="residente1" fill="currentColor" class="bi bi-journal-code" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M8.646 5.646a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L10.293 8 8.646 6.354a.5.5 0 0 1 0-.708zm-1.292 0a.5.5 0 0 0-.708 0l-2 2a.5.5 0 0 0 0 .708l2 2a.5.5 0 0 0 .708-.708L5.707 8l1.647-1.646a.5.5 0 0 0 0-.708z"/>
+    <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z"/>
+    <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z"/>
+  </svg></a>
+</div>
+
+<div id="inspector0">
+<div id="textonspect">INSPECTOR</div>
+<br></br>
+    <a href="/inspector" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" id="inspector1" fill="currentColor" class="bi bi-journal-code" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M8.646 5.646a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L10.293 8 8.646 6.354a.5.5 0 0 1 0-.708zm-1.292 0a.5.5 0 0 0-.708 0l-2 2a.5.5 0 0 0 0 .708l2 2a.5.5 0 0 0 .708-.708L5.707 8l1.647-1.646a.5.5 0 0 0 0-.708z"/>
+    <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z"/>
+    <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z"/>
+  </svg></a>
+</div>
+
+<div id="cuaderno">
+</div>
+
+<script>
+ fetch('http://localhost:8000/cuaderno')
+  .then(response => response.json())
+  .then(function (data){
+  var bandera=0; 
+  var ante='<text class=subtitulo>'
+  for(var i=0;i<data.length;i++){
+  const enlaces = document.createElement("div"); 
+  if(bandera==0){
+  enlaces.innerHTML = ante+'FECHA: </text><text class=subtitulo>'+data[i]+'</text>'
+  document.getElementById('cuaderno').appendChild(enlaces);
+  bandera=1
+}else if(bandera==1){
+  enlaces.innerHTML = ante+'RECIBO: </text><text class=contenido>'+data[i]+'</text>'
+  document.getElementById('cuaderno').appendChild(enlaces);
+  bandera=2
+}else if(bandera==2){
+  var link='<a href="http://localhost:8000/impresas/pagina'+(i+1)/3+'.pdf">PAGINA '+(i+1)/3+'</a>'
+  enlaces.innerHTML = ante+'HASH: </text><text class=contenido>'+data[i]+'</text><p>'+link+'</p>'
+  document.getElementById('cuaderno').appendChild(enlaces)
+  bandera=0
+}
+}  
+    
+});
+</script>
+  
+</body>
+</html>

@@ -1,0 +1,14 @@
+Esta es una aplicación que replica la funcionalidad del Libro De Obra utilizado en el ámbito de la construcción. La misma se inspira en la metodología de la Cadena de Bloques para cifrar y plasmar las páginas que describen la evolución de la obra civil.
+
+Modo de usarla:
+
+En la página principal aparecen dos link que re direccionan tanto  a la sección del ingeniero residente como a la del ingeniero inspector. En ambas se encontrara un botón con el texto “REGISTRARSE” que desplegara un formulario de registro. En caso de ser la primera vez que se ingresa la entrada “CONTRASEÑA” y “CONFIRMACION” deberá contener los mismos caracteres,   y en caso de querer cambiar el usuario o contraseña, deberá colocar los nuevos datos pero asegurando introducir en la casilla de “CONFIRMACION” la contraseña antecedente
+
+En el recuadro superior deberá colocarse  el usuario y contraseña registrado en el paso anterior para validar su identidad, posterior a esto podrá seleccionar el documento a registrar y enviarlo.
+
+Si ambos ingenieros ingresan el documento y estos presentan el mismo hash la aplicación automáticamente registrara la Fecha, el hash y un recibo que ayudara  a validar la autenticidad del registro plasmado, en caso contrario, la aplicación no  registrara la información y esperara que existe consenso entre ambos ingenieros    
+
+Consideracion:
+
+-La aplicación está orientada almacenar documentos en formatos pdf. Aunque no es excluyente para algún otro formato es pertinente aclarar que el nombre del documento vendrá finalizado con el carácter .pdf
+

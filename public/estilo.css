@@ -1,0 +1,149 @@
+body{
+margin-top: 5vh;
+margin-left: 0;    
+text-align: center;
+color: black;
+float: left;
+background-color: rgb(175, 197, 197);
+overflow-y: scroll;
+}
+#titulo{
+font-size: calc(2.5vw); 
+transform: translate(11.5vw,0);
+color: rgb(212, 151, 19);  
+}
+#cuaderno{
+width: 57vw;
+min-height:70vh;  
+border: 1vw solid rgb(46, 44, 43);
+background-color: azure;
+text-align: left;
+float: left;
+transform: translate(1.5vw,10vh);
+}
+#residente0{
+width: 10vw;
+float: left;   
+transform: translate(5vw,25vh); 
+}
+#textresident{
+width: 100%;
+color: rgb(12, 11, 11);  
+font-size: calc(1.5VW);
+}
+#residente1{
+width: 100%;
+float: left;
+}
+#inspector0{
+width: 10vw;
+float: left;   
+transform: translate(75vw,25vh); 
+}
+#textonspect{
+width: 100%;
+color: rgb(12, 11, 11);  
+font-size: calc(1.5VW);
+}
+#inspector1{
+width: 100%;
+float: left;
+}
+#titulo2{
+font-size: calc(2.5vw); 
+transform: translate(22vw,0);
+color: rgb(212, 151, 19);  
+}
+#registro0{
+width: 25vw;
+height: 35vh;
+border: 0.5vw solid rgb(243, 234, 195);
+color: beige;    
+transform: translate(23vw,10vh);
+opacity: 0.8;
+background-color: rgb(53, 52, 52);
+}
+#usuario{
+width: 15vw;    
+transform: translate(1.2vw,0);    
+}
+#contraseña{
+width: 15vw;    
+}
+ #registro0 form label{
+font-size: calc(1.1vw);    
+}
+#b1{
+width: 10vw;    
+font-size: calc(1.2vw);
+}
+#oculto{
+display:none;    
+}
+#oculto2{
+display:none;    
+position: relative;
+}
+#enviar{
+font-size: calc(1.8vw); 
+float: right;
+transform: translate(25.5vw,-7vh);    
+}
+#carga0{
+width: 15vw; 
+height: 6vh;  
+font-size: calc(1.1vw); 
+float: right;
+transform: translate(20vw,-20vh);
+position: relative;
+}
+#visible{
+width: 15vw; 
+height: 6vh;  
+font-size: calc(1.25vw); 
+float: right;  
+transform: translate(35vw,0vh);
+position:relative;
+
+}
+#despliegue{
+width: 30vw; 
+float: left;
+position: relative;   
+transform: translate(37vw,10vh);
+}
+#registro1{
+width: 25vw;
+height: 35vh;
+border: 0.5vw solid rgb(243, 234, 195);
+color: beige;    
+transform: translate(39.5vw,25vh);
+opacity: 0.8;
+background-color: rgb(53, 52, 52);
+display: none;
+}
+#usuario2{
+transform: translate(1.2vw,0);    
+}#contraseña2{
+transform: translate(.4vw,0);    
+}
+#registro1 form label{
+font-size: calc(.7vw); 
+}
+#registro1 form input{
+width: 15vw;
+}
+#b2{
+width: 5vw;
+font-size: calc(1vw);    
+}
+#separado{
+transform: translate(0,-5.5vh); 
+}
+.subtitulo{
+font-size: calc(1vw);
+}
+.contenido{
+font-size: calc(.75vw);
+font-weight: bold;
+}
